@@ -1,8 +1,9 @@
 # Docker-Xray
 将[xray](https://github.com/XTLS/Xray-core)原封不动打包到docker
 
-![stars](https://img.shields.io/docker/stars/boringcat/xray.svg) ![pulls](https://img.shields.io/docker/pulls/boringcat/xray.svg)
-
+<a href="//hub.docker.com/r/boringcat/xray" target="_blank">![stars](https://img.shields.io/docker/stars/boringcat/xray.svg)</a>
+<a href="//hub.docker.com/r/boringcat/xray" target="_blank">![pulls](https://img.shields.io/docker/pulls/boringcat/xray.svg)</a>
+<a href="//github.com/boringcat/docker-xray" target="_blank">![github](https://img.shields.io/github/stars/boringcat/docker-xray.svg)</a>
 
 ## Docker Build
 ```sh
