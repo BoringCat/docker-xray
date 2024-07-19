@@ -50,7 +50,7 @@ jobs:
           docker.io/${{ github.repository_owner }}/${{ vars.DOCKERHUB_REPO }}
         tags: |
           ${{ inputs.version }}
-          ${{ (inputs.latest == 'true' && 'latest') || '' }}
+          ${{ (inputs.latest != 'false' && 'latest') || '' }}
 
     - uses: docker/build-push-action@v5
       name: Build the Docker image
