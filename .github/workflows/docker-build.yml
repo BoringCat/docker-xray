@@ -7,6 +7,7 @@ on:
         type: boolean
         description: 是否构建为latest
         required: false
+        default: 'false'
       version:
         description: 构建的版本
         required: true
@@ -49,7 +50,7 @@ jobs:
           docker.io/${{ github.repository_owner }}${{ vars.DOCKERHUB_REPO }}
         tags: |
           ${{ inputs.version }}
-          ${{ "latest"[inputs.latest == 'true'] }}
+          ${{ (inputs.latest == 'true' && 'latest') || '' }}
 
     - uses: docker/build-push-action@v5
       name: Build the Docker image
