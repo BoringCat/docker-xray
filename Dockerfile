@@ -1,10 +1,10 @@
-FROM alpine:latest as baseimg
+FROM alpine:latest AS baseimg
 
 RUN --mount=type=cache,target=/var/cache\
     set -xe\
  && apk add --no-cache tzdata ca-certificates
 
-FROM baseimg as downloader
+FROM baseimg AS downloader
 
 ADD platform_choise.sh /
 ARG XRAY_VERSION
@@ -27,4 +27,4 @@ FROM baseimg
 COPY --from=downloader /fakeroot/ /
 VOLUME /etc/xray
 ENV TZ=Asia/Shanghai
-CMD [ "/usr/bin/xray", "-config", "/etc/xray/config.json" ]
+CMD [ "/usr/bin/xray", "run", "-config", "/etc/xray/config.json" ]
